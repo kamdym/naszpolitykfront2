@@ -1,0 +1,35 @@
+.logout-icon {
+  position: absolute;
+  right: 0;
+  cursor: pointer;
+}
+
+.profile-icon {
+  position: absolute;
+  right: 60px;
+  top: 3px;
+  cursor: pointer;
+}
+
+.vertical-little-pipe {
+  position: absolute;
+  top: 9px;
+  right: 40px;
+  font-size: 26px;
+  color: #afb2b6;
+}
+
+.text{
+  position: absolute;
+  width: 1347px;
+  height: 233px;
+  left: 441px;
+  top: 315px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 27px;
+  line-height: 40px;
+  text-align: center;
+  color: #06052D;
+}

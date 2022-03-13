@@ -1,0 +1,43 @@
+<div class="upper-panel-menu">
+  <mat-icon class="profile-icon">account_circle</mat-icon>
+  <div class="vertical-little-pipe">|</div>
+  <mat-icon matTooltip="Wyloguj się" (click)="logoutUser()" class="logout-icon">exit_to_app</mat-icon>
+</div>
+<app-left-menu-res></app-left-menu-res>
+<div class="profile-container" style="max-width: 75%;width: 100%;float: left">
+  <div class="politician-profile-text">Twój profil</div>
+  <div class="profile-content">
+    <mat-icon class="profile-big-icon">account_circle</mat-icon>
+    <div class="info-container">
+      <div class="first-name-container">{{userName}}</div>
+      <div class="email-container">{{userEmail}}</div>
+      <button style="cursor: pointer" (click)="setShowChangePasswordFormOnClick()" class="change-password">Zmiana hasła</button></div>
+
+    <div class="password-change-container form-style" *ngIf="showChangePasswordForm">
+      <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+        <div class="password-inputs">
+          <div class="form-group">
+            <input class="form-control first-pass" type="password" placeholder="Wprowadź nowe hasło" name="password"
+                   id="password" #password="ngModel"
+                   required [(ngModel)]="passwordText" pattern='^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$'>
+            <div class="text-danger" *ngIf="password.invalid && (password.dirty || password.touched)">
+              To pole nie może zostać puste, dodatkowo hasło musi zawierać min. 8 znaków w tym co najmniej jedną dużą i małą literę oraz cyfrę
+            </div>
+          </div>
+          <div class="form-group">
+            <input class="form-control repeat-pass" type="password" placeholder="Powtórz hasło" name="passwordConfirm"
+                   id="passwordConfirm"
+                   ngModel #pwConfirm="ngModel"
+                   required compare="password" placeholder="Powtórz nowe hasło" [(ngModel)]="passwordConfirmText">
+            <div class="text-danger" *ngIf="pwConfirm.invalid && (pwConfirm.dirty || pwConfirm.touched)">
+              <div>Hasła się różnią lub jedno z pól jest puste</div>
+            </div>
+          </div>
+        </div>
+        <button style="cursor: pointer" type="submit" class="send-button2" [disabled]="!f.valid" [class.button-disabled]="!f.valid == true">
+          Potwierdź
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,199 @@
+body {
+  font-family: 'Poppins', 'sans-serif';
+}
+div.content {
+  overflow: hidden;
+  margin-left: 326px;
+  padding: 1px 16px;
+  height: 1000px;
+  color: #06052d;
+}
+
+.discussion-text {
+  font-family: 'Poppins', 'sans-serif';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 64px;
+  line-height: 96px;
+  margin-left: 27%;
+  color: #06052d;
+}
+
+.navigation-component {
+  display: flex;
+  font-size: 45px;
+  font-family: "Times New Roman";
+  font-weight: normal;
+  line-height: normal;
+}
+
+.flex-container {
+  display: flex;
+}
+
+.flex-left {
+  width: 100%;
+}
+
+.flex-right {
+  width: 25%;
+  text-align: right;
+}
+
+.pipe-discuss {
+  margin-left: 5px;
+  margin-right: 5px;
+  font-size: 25px;
+  color: #CCCCCC;
+}
+
+.profile-icon {
+  cursor: pointer;
+}
+
+.logout-icon {
+  cursor: pointer;
+}
+
+.comments-for-article-container {
+  max-height: calc(100% - 200px);
+  height: 100%;
+  overflow: auto;
+  scrollbar-width: thin;
+  overflow-x: hidden;
+  margin-bottom: 20px;
+}
+
+.table-container {
+  margin-left: 400px;
+  width: calc(100% - 400px);
+  height: calc(100% - 150px);
+  /*border-radius: 15px;*/
+  /*border: 10px solid #74bec1;*/
+}
+
+.links {
+  width: 75%;
+  float: left;
+  text-align: left;
+}
+
+.social_media {
+  width: 25%;
+  float: left;
+  text-align: right;
+}
+
+.clearfix {
+  clear: both;
+}
+
+.comment-content {
+  font-family: "Poppins", 'sans-serif';
+  font-weight: 300;
+  font-size: 18px;
+  color: #FFA800;
+
+}
+
+.comment-content-positive {
+  font-family: "Poppins", 'sans-serif';
+  font-weight: 300;
+  font-size: 18px;
+  color: #009C41;
+
+}
+
+.comment-content-negative {
+  font-family: "Poppins", 'sans-serif';
+  font-weight: 300;
+  font-size: 18px;
+  color: #B31B1B;
+
+}
+
+.art-author {
+  font-family: "Poppins", 'sans-serif';
+  font-weight: 300;
+  font-size: 18px;
+  color: #06052D;
+}
+
+.art-title {
+  font-family: "Poppins", 'sans-serif';
+  font-weight: 300;
+  font-size: 18px;
+  color: #06052D;
+}
+
+.politician-table-header {
+  font-family: Poppins;
+  color: #06052d;
+  padding-top: 18px;
+  padding-left: 2%;
+  padding-bottom: 2%;
+  font-size: 22px;
+}
+
+.table-content {
+  font-family: Poppins;
+  padding-left: 2%;
+  padding-bottom: 18px;
+  font-size: 15px;
+}
+
+.politician-table {
+  background: #FFFFFF;
+  border-top: 0.5px solid #CCCCCC;
+  border-bottom: 0.5px solid #CCCCCC;
+  margin-top: 50px;
+}
+
+.article-table {
+  position: fixed;
+  left: 50%;
+  top: 20%;
+  width: 50%;
+  transform: translate(-40%, -60%);
+}
+
+.comments-count {
+  color: #06052d;
+  font-family: "Poppins", 'sans-serif';
+  font-weight: bold;
+}
+
+.comment-itself {
+  font-family: "Poppins", "sans-serif";
+}
+
+.root-comment-input {
+  border: none;
+  color: #06052D;
+  margin-left: 20px;
+}
+
+.root-com-container {
+  margin-top: 10px;
+  margin-left: -10px;
+}
+
+.user-name-in-comment {
+  color: #06052d;
+  font-family: "Poppins", "sans-serif";
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.reply-button {
+  color: #06052d;
+  margin-top: 10px;
+  border: none;
+  background-color: #ffffff;
+  font-family: "Poppins", "sans-serif";
+  font-weight: bold;
+}
+
+mat-expansion-panel {
+  width: 50%;
+}

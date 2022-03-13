@@ -1,0 +1,218 @@
+body {
+  margin-top: 1%;
+  font-family: 'Poppins', 'sans-serif';
+}
+
+.politician-profile-text {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 64px;
+  color: #06052D;
+}
+.politician-profile-header-container {
+  /*width: 50%;*/
+  /*float: left;*/
+}
+.politician-avatar {
+  max-width: 110px;
+  max-height: 137px;
+  height: 100%;
+  width: 100%;
+  filter: drop-shadow(0px 2px 10px rgba(0, 0, 0, 0.3));
+  border-radius: 13px;
+}
+
+.discussion-icon{
+  color: #06052d;
+}
+
+.discussion-icon:hover{
+  color: #74bec1;
+}
+
+.politician-full-name-container {
+  margin-top: 5%;
+  margin-bottom: 2%;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 36px;
+  color: #06052D;
+}
+
+.follow-btn {
+  font-size: 17px;
+}
+
+.politician-about {
+  font-family: Poppins;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 24px;
+  color: #06052D;
+  max-width: 100%;
+  float: left;
+}
+
+.politician-observable-button {
+  max-width: 110px;
+  max-height: 30px;
+  margin-left: 2%;
+  text-align: center;
+  background: #74BEC1;
+  color: white;
+  box-sizing: border-box;
+  border-radius: 100px;
+  border: 0px solid #74BEC1;
+}
+
+.politician-observable-button-red {
+  text-align: center;
+  background: #FF5B7E;
+  color: white;
+  box-sizing: border-box;
+  border-radius: 100px;
+  border: 0px solid #FF5B7E;
+}
+
+.politician-observable-button:hover {
+  background: #97CBCD;
+}
+
+.politician-av {
+  margin-top: 3%;
+  margin-bottom: 4%;
+  margin-right: 2%;
+  margin-left: 5%;
+}
+.politician-observable-button-red:hover {
+  background: #FF7895;
+}
+
+.vertical-pipe {}
+
+.politician-opinions {
+  float: right;
+}
+
+.little-header{
+  font-size: 22px;
+  font-weight: 600;
+  margin-left: 20%;
+  margin-bottom: 0;
+}
+
+.politician-table {
+  color: #06052d;
+  background: #FFFFFF;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
+  border-radius: 15px;
+  width: 90%;
+}
+
+.logout-icon {
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+}
+.profile-icon {
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+  margin-top: 1%;
+}
+
+.vertical-little-pipe {
+  font-size: 26px;
+  color: #afb2b6;
+}
+
+.main-content {
+  width: 75%;
+  float: left;
+  margin-left: 460px;
+}
+.opinions {
+  float: right;
+}
+.header-container {
+  float: right;
+  display: flex;
+}
+/*.vertical-little-pipe {*/
+/*  margin-top: 14%;*/
+/*  font-size: 38px;*/
+/*  color: #afb2b6;*/
+/*}*/
+
+@media only screen and (max-width: 700px) {
+  .main-content {
+    width: 75%;
+    margin-left: 0%;
+    float: left;
+    height: 100%;
+  }
+  .politician-table {
+    width: 75%;
+  }
+}
+
+table {
+  width: 90%;
+  font-family:Poppins;
+  font-size: 40px;
+
+}
+
+.table-headers{
+  font-size: 18px;
+  font-weight: bolder;
+  color: #06052d;
+}
+
+tr.example-detail-row {
+  height: 0;
+}
+
+tr.example-element-row:not(.example-expanded-row):hover {
+  background: whitesmoke;
+}
+
+tr.example-element-row:not(.example-expanded-row):active {
+  background: #efefef;
+}
+
+.example-element-row td {
+  border-bottom-width: 0;
+}
+
+.example-element-detail {
+  overflow: hidden;
+  display: flex;
+}
+
+.example-element-diagram {
+  min-width: 80px;
+  border: 2px solid black;
+  padding: 8px;
+  font-weight: lighter;
+  margin: 8px 0;
+  height: 104px;
+}
+
+.example-element-symbol {
+  font-weight: bold;
+  font-size: 40px;
+  line-height: normal;
+}
+
+.example-element-description {
+  padding: 16px;
+}
+
+.example-element-description-attribution {
+  opacity: 0.5;
+}
+

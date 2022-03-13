@@ -1,0 +1,42 @@
+﻿<div class="rows">
+  <div class="big-logo-container">
+    <h1 class="np-big-logo">NP</h1>
+    <h1 class="pipe-big-logo">|</h1>
+    <h1 class="np-big-logo-txt">NASZ POLITYK</h1>
+  </div>
+  <div class="columns">
+    <div class="column1">
+      <div class="text">
+        <h1 class="header-1">Nasz Polityk, <br> wszystko pod ręką.</h1>
+        <div class="text-1">Poznaj opinie internautów na temat polityków<br> należących do Sejmu, Senatu, czy też Rady
+          Ministrów.<br>
+          Znajdź swojego aktywistę, dołącz do dyskusji lub ją rozpocznij. <br>Oceniaj komentarze a także artykuły, z których
+          one pochodzą.<br>
+          Sprawdź 10 najczęściej komentowanych polityków miesiąca.
+        </div>
+      </div>
+    </div>
+    <div class="column2">
+      <div class="form-style">
+  <span class="email-form field">
+      <input style="font-family:Poppins" [(ngModel)]="model.email" type="text" placeholder="Adres e-mail" name="email" id="email" required>
+    </span>
+        <span class="password-form field">
+      <input style="font-family:Poppins" [(ngModel)]="model.password" type="password" placeholder="Hasło" name="psw" id="psw" required>
+    </span>
+        <button (click)="login()" class="login-button2">Zaloguj się</button>
+        <button class="register-button2"  routerLinkActive="active" routerLink="/registration">Rejestracja</button>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="big-logo-container">
+      <h1 class="np-footer-logo">NP</h1>
+      <h1 class="pipe-footer-logo">|</h1>
+      <h1 class="np-footer-logo-txt">NASZ POLITYK</h1>
+      <span class="copyright"> <br><br> © 2021 Nasz Polityk<br>
+          Wszystkie prawa zastrzeżone.</span>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,55 @@
+<head>
+  <meta charset="utf-8">
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+          crossorigin="anonymous"></script>
+</head>
+<app-left-menu-res></app-left-menu-res>
+<app-upper-panel></app-upper-panel>
+<div class="main-content">
+<div class="find-politician-container">
+  <div class="find-politician-text">
+    <h2 class="find-politician-header">Znajdź polityka i poznaj jego ocenę</h2>
+    <span class="find-politician-span">Szukaj wśród polityków należących do Sejmu,<br>Senatu jak i Rady Ministrów.</span>
+    <!--
+    <div class="search-bar">
+      <input class="search-input" type="text" id="searchPhrase" name="searchPhrase" placeholder="Wprowadź nazwisko polityka..." [(ngModel)]="searchModel.surname" name="surname" id="surname"/>
+      <button class="search-button border-for-search-button" (click)="searchPolitician()" type="submit">Szukaj</button>
+    </div>
+    -->
+    <div class="searchbar-rectangle">
+      <div class="input-rectangle">
+        <mat-icon class="icon-display">search</mat-icon>
+        <input class="search-input" type="text" id="searchPhrase" name="searchPhrase" placeholder="Wprowadź nazwisko polityka..." [(ngModel)]="searchModel.surname" name="surname" id="surname"/>
+      </div>
+      <div class="button-rectangle">
+        <button class="search-button" (click)="searchPolitician()" type="submit">Szukaj</button>
+      </div>
+    </div>
+    <div class="politician-text-header">
+      <h2 class="find-politician-header">Politycy</h2>
+    </div>
+    <div class="politician-list-container">
+      <h2 class="politicians-txt">Posłowie</h2>
+      <div class="actual-politician-list">
+        <button class="politician-list-redirect-button" *ngFor="let politician of politicianList" (click)="redirectToPoliticianProfile(politician.id)">{{politician.firstName}} {{politician.lastName}}<mat-icon class="icon-redirect" matTooltip="Przejdź do profilu polityka">call_made</mat-icon></button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<ng-template #dialogRef let-mydata>
+  <h3 style="font-family: Poppins">Znaleziono nastepujacych politykow o podanym nazwisku: <br> Nacisnij na nazwisko polityka, ktorego profil chcesz zobaczyc</h3>
+  <ul *ngIf="mydata">
+    <li *ngFor="let item of mydata"><button class="plain-button" (click)="redirectToPoliticianProfileAndCloseDialog(item.id)">{{item.firstName}} {{item.lastName}} {{item.clubName}}</button></li>
+  </ul>
+  <button mat-button mat-dialog-close="I am from dialog land...">Zamknij</button>
+</ng-template>

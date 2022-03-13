@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+          crossorigin="anonymous"></script>
+</head>
+<app-upper-panel></app-upper-panel>
+<body>
+<app-left-menu-res></app-left-menu-res>
+<div class="main-content">
+  <span class="politician-profile-text">Profil polityka</span>
+  <div class="politician-profile-container">
+    <div class="whole-info-container" style="display: flex">
+      <div class="politician-av">
+        <img class="politician-avatar" src="{{politicianPicture}}" alt="{{politicianFirstName}} {{politicianLastName}}">
+      </div>
+      <div class="politician-info" style="width: 50%">
+        <div class="politician-full-name-container">{{politicianFirstName}} {{politicianLastName}}
+          <button hidden class="follow-btn" (click)="followEnableDisable()"
+                  [ngClass]="{'politician-observable-button' : toggle, 'politician-observable-button-red': !toggle}">{{status}}</button>
+        </div>
+        <div class="politician-about"> <strong>Data urodzenia:</strong> {{politicianBirthDate}} {{politicianBirthPlace}}<br>
+          <strong>Klub:</strong> {{politicianClubName}}<br>
+          <strong>Wykształcenie:</strong> {{politicianEducation}}<br> <strong>Doświadczenie:</strong> {{politicianExp}} </div>
+      </div>
+    </div>
+    <div class="article-container">
+<!--      <table class="table politician-table">-->
+<!--        <tr>-->
+<!--          <th><span class="little-header">Artykuł</span></th>-->
+<!--          <th><span class="little-header">Autor</span></th>-->
+<!--          <th><span class="little-header">Data</span></th>-->
+<!--          <th><span class="little-header">Treść komentarza</span></th>-->
+<!--          <th></th>-->
+<!--        </tr>-->
+<!--        <tr *ngFor="let item of articleContent">-->
+<!--          <td style="width: 20%;"><span class="article">{{item.title}}</span></td>-->
+<!--          <td><span class="article">{{item.author}}</span></td>-->
+<!--          <td style="width: 20%;"><span class="article">{{item.createdDate}}</span></td>-->
+<!--          <td style="width: 50%;"><span class="comment">{{item.comments[0]}}</span></td>-->
+<!--          <td><mat-icon (click)="redirectToDiscussionByComment(item.id, commentId,commentContent)"-->
+<!--                   class="discussion-icon" matTooltip="Przejdź do strefy dyskusji" style="cursor: pointer">message</mat-icon></td>-->
+<!--        </tr>-->
+<!--      </table>-->
+      <table mat-table
+             [dataSource]="articleContent" multiTemplateDataRows
+             class="mat-elevation-z8">
+        <ng-container matColumnDef="title">
+          <th class="table-headers" mat-header-cell *matHeaderCellDef> Tytuł artykułu </th>
+          <td style="cursor: pointer" mat-cell *matCellDef="let element"> {{element.title}} </td>
+        </ng-container>
+        <ng-container matColumnDef="author">
+          <th class="table-headers" mat-header-cell *matHeaderCellDef> Autor artykułu </th>
+          <td style="cursor: pointer" mat-cell *matCellDef="let element"> {{element.author}} </td>
+        </ng-container>
+        <ng-container matColumnDef="createdDate">
+          <th class="table-headers" mat-header-cell *matHeaderCellDef> Data utworzenia </th>
+          <td style="cursor: pointer" mat-cell *matCellDef="let element"> {{element.createdDate}} </td>
+        </ng-container>
+
+        <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
+        <ng-container matColumnDef="expandedDetail">
+          <td mat-cell *matCellDef="let element" [attr.colspan]="columnsToDisplay.length">
+            <div class="example-element-detail"
+                 [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
+              <ul>
+                <li *ngFor="let item of commentData" [style.color]="getCommentColor(item.sentiment)" style="cursor: pointer" (click)="redirectToComment(item.id, element.id)"> {{item.content}} </li>
+              </ul>
+            </div>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+        <tr mat-row *matRowDef="let element; columns: columnsToDisplay;"
+            class="example-element-row"
+            [class.example-expanded-row]="expandedElement === element"
+            (click)="expandedElement = expandedElement === element ? null : element; loadComments(element.id)">
+        </tr>
+        <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
+      </table>
+      <mat-paginator [length]="totalElements"
+                     [pageSize]="size"
+                     (page)="changePage($event)"
+                     [pageSizeOptions]="[5, 10, 25, 100]"
+                     aria-label="Select page">
+      </mat-paginator>
+
+    </div>
+  </div>
+</div>
+</body>
+</html>

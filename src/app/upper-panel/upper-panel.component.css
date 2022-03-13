@@ -1,0 +1,33 @@
+.logout-icon {
+  position: absolute;
+  cursor: pointer;
+  transform: scale(1.5);
+  right: 10px;
+  top: 10px;
+  color: #06052d;
+}
+
+.logout-icon:hover {
+  color: #3E3C73;
+}
+
+.profile-icon {
+  position: absolute;
+  cursor: pointer;
+  transform: scale(1.5);
+  right: 62px;
+  top: 10px;
+  color: #06052d;
+}
+
+.profile-icon:hover {
+  color: #3E3C73;
+}
+
+.vertical-little-pipe {
+  position: absolute;
+  top: 11px;
+  right: 45px;
+  font-size: 26px;
+  color: #CCCCCC;
+}

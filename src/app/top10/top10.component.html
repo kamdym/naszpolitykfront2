@@ -1,0 +1,41 @@
+<head>
+  <meta charset="utf-8">
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+          crossorigin="anonymous"></script>
+</head>
+<app-left-menu-res></app-left-menu-res>
+<app-upper-panel></app-upper-panel>
+<div class="main-content">
+  <div class="top10-text">
+    <h1 class="top10-text-header">Top 10 miesiąca: <br>
+      <h1 class="top10-text-header" style="color: #74bec1">luty</h1></h1>
+    <ul>
+      <li class="linked-list"> W tym zestawieniu pojawiają się najczęściej <br><br>komentowani politycy danego miesiąca.
+      </li>
+      <li class="linked-list">Na miejscu pierwszym znajduje się aktywista z<br><br> największą liczbą wzmianek - czy to w<br><br>
+        komentarzach użytkowników czy w artykułach.
+      </li>
+      <li class="linked-list">Kliknij w prostokąt aby przejść do profilu danego<br><br> polityka.</li>
+    </ul>
+  </div>
+  <div class="top10-content">
+    <button class="top-10-redirect-button politician-list-redirect-button"
+            [ngClass]="{'last-top-10' : top.top == 10}" *ngFor="let top of top10"
+            (click)="redirectToPoliticianProfile(top.politicianId)">
+      <div class="top10-actual-content"><h1 class="top-number">{{top.top}}</h1>
+       <div class="top-content">
+         <img class="politician-avatar" matTooltip="Przejdź do profilu polityka" src="{{top.avatar}}"><div style="margin-top: 10%;font-weight: bold">{{top.firstName}} {{top.lastName}} <br>Liczba wzmianek: {{top.mentionsCount}}</div>
+       </div>
+      </div>
+    </button>
+  </div>
+</div>
